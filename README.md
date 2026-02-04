@@ -1,4 +1,4 @@
-# Roob : Buidling Web Framework from scratch
+# Roob : Building Web Framework from scratch
 
 Roob is a lightweight, experimental Python web framework inspired by Django and FastAPI.
 It is being developed step by step for educational purposes, with a strong focus on understanding the internal architecture of modern web frameworks, including routing, request–response handling, middleware design, and WSGI concepts.
