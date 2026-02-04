@@ -1,0 +1,2 @@
+from core import exception_handler_middleware as app
+import core.product_controller as product_controller
