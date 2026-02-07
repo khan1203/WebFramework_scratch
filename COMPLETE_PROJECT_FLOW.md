@@ -29,11 +29,19 @@ This is a custom Python web framework called **Roob** that implements:
 
 ## Entry Point & Initialization
 
+<<<<<<< HEAD
 ### 🎯 The Entry Point: `core.main:app`
 
 When you run:
 ```bash
 gunicorn core.main:app
+=======
+### 🎯 The Entry Point: `core.main:exception_handler_middleware`
+
+When you run:
+```bash
+gunicorn core.main:exception_handler_middleware
+>>>>>>> v1.0_phase-4
 ```
 
 Gunicorn looks for the `exception_handler_middleware` object in `core/main.py`
