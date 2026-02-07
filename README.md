@@ -16,7 +16,7 @@ The framework is not production-ready and is not intended to compete with establ
 Development will continue iteratively, In shā’ Allāh, with increasing architectural depth and feature completeness.
 
 
-# Roob Web Framework - Complete Architecture & Flow
+# Roob : Complete Architecture & Flow
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
