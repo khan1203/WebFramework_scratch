@@ -1,11 +1,12 @@
 from webob import Request
 from roob.common_handlers import CommonHandlers
+from roob.framework import Roob
 
 
 class ErrorHandlerMiddleware:
     def __init__(
             self, 
-            app, 
+            app: Roob, 
             exception_handler: callable = CommonHandlers.generic_exception_handler
         ):
         
