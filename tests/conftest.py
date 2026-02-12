@@ -7,6 +7,7 @@ from wsgiadapter import WSGIAdapter as RequestsWSGIAdapter
 
 from roob.middlewares import ErrorHandlerMiddleware
 from tests.constants import BASE_URL
+from tests.utils.temp_file_builder import TempFileBuilder
 
 
 class TestFramework(Roob):
@@ -30,3 +31,7 @@ def app() -> TestFramework:
 @pytest.fixture
 def client(app: TestFramework):
     return app.test_session()
+
+@pytest.fixture
+def temp_file_builder(tmpdir_factory) -> TempFileBuilder:
+    return TempFileBuilder(tmpdir_factory, root_dir="static")

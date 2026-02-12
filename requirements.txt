@@ -13,3 +13,4 @@ requests-wsgi-adapter==0.4.1
 urllib3==2.6.3
 WebOb==1.8.9
 Jinja2==3.1.6
+whitenoise==6.11.0
