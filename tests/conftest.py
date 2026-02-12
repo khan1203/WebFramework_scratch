@@ -1,5 +1,6 @@
 import pytest
 
+from pathlib import Path
 from roob import Roob
 from requests import Session as RequestsSession
 from wsgiadapter import WSGIAdapter as RequestsWSGIAdapter
@@ -22,7 +23,8 @@ class TestFramework(Roob):
 
 @pytest.fixture
 def app() -> TestFramework:
-    return TestFramework()
+    cwd = Path(__file__).resolve().parent
+    return TestFramework(template_dir=f"{cwd}/templates")
 
 
 @pytest.fixture
