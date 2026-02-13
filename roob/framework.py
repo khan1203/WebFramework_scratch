@@ -6,7 +6,6 @@ from jinja2 import Environment, FileSystemLoader
 import os
 from typing import Optional
 
-
 class Roob:
     def __init__(self, template_dir: str = "templates", static_dir: str = "static"):
         self.routing_manager = RouteManager()
@@ -24,11 +23,26 @@ class Roob:
 
         self.exception_handler: Optional[callable] = None
 
-    # def __call__(self, environ, start_response):
-    #     http_request = Request(environ)
-    #     response: Response = self.routing_manager.dispatch(http_request)
-    #     return response(environ, start_response)
-
+    #Evoluton = 1.0 -----------------------------------
+    '''
+    def __call__(self, environ, start_response):
+        http_request = Request(environ)
+        response: Response = self.routing_manager.dispatch(http_request)
+        return response(environ, start_response)
+    '''
+    #Evoluton = 2.0 -----------------------------------
+    '''
+    def __call__(self, environ, start_response):
+        http_request = Request(environ)
+        try:
+            response: Response = self.routing_manager.dispatch(http_request)
+        except Exception as e:
+            if not self.exception_handler:
+                raise e
+            response: Response = self.exception_handler(http_request, e)
+        return response(environ, start_response)
+    '''
+    #Evolution = 3.0 -----------------------------------
     def __call__(self, environ, start_response):
         return self.whitenoise(environ, start_response)
 
